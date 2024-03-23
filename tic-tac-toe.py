@@ -1,4 +1,4 @@
-# Classic Tic-tac-toe for 2 players
+# Classic Tic-tac-toe game
 
 """
 topL|topM|topR
@@ -15,7 +15,7 @@ grid = {
     'botL': " ", 'botM': " ", 'botR': " "
     }
 
-# Function for playing game
+# Function to play the game
 def play(grid):
 
     turn = 'X'
@@ -42,7 +42,7 @@ def play(grid):
 
         printgrid(grid)
 
-        if haswon(grid) == True:
+        if victory(grid) == True:
             print("Player " + turn + " has won!")
             break
 
@@ -51,10 +51,10 @@ def play(grid):
         else:
             turn = 'X'
 
-    if haswon(grid) == False:
+    if victory(grid) == False:
         print("It's a tie")
 
-# Function to print grid
+# Function to print the grid
 def printgrid(grid):
     print(grid['topL'] + '|' + grid['topM'] + '|' + grid['topR'])
     print('-----')
@@ -63,8 +63,8 @@ def printgrid(grid):
     print(grid['botL'] + '|' + grid['botM'] + '|' + grid['botR'])
     print('\n')
 
-# Function to check if anyone has won
-def haswon(grid):
+# Function to check possible victory
+def victory(grid):
     if (  grid['topL'] == grid['topM'] == grid['topR'] != " " # top row
     ) or (grid['midL'] == grid['midM'] == grid['midR'] != " " # middle row
     ) or (grid['botL'] == grid['botM'] == grid['botR'] != " " # bottom row
