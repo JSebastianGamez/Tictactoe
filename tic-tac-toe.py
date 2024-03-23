@@ -17,26 +17,18 @@ grid = {
 
 # Function to play the game
 def play(grid):
-
     turn = 'X'
-
     for i in range (9):
-
         while True:
-
             position = input("Player " + turn + ''' enter location:
                 topL, topM, topR, midL, midM, midR, botL, botM, botR''')
 
             if position in grid:
-
                 if grid[position] == " ":
-
                     grid[position] = turn
                     break
-
                 else:
                     print("This postion has already been taken! \n")
-
             else:
                 print("Invalid position \n")
 
@@ -45,12 +37,10 @@ def play(grid):
         if victory(grid) == True:
             print("Player " + turn + " has won!")
             break
-
         if turn == 'X':
             turn = 'O'
         else:
             turn = 'X'
-
     if victory(grid) == False:
         print("It's a tie")
 
