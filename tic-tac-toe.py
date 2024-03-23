@@ -22,7 +22,6 @@ def play(grid):
         while True:
             position = input("Player " + turn + ''' enter location:
                 topL, topM, topR, midL, midM, midR, botL, botM, botR''')
-
             if position in grid:
                 if grid[position] == " ":
                     grid[position] = turn
